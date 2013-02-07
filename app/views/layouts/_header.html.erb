@@ -2,7 +2,7 @@
   <div class="navbar-inner">
     <div class="container">
       <%= link_to(root_path) do %>
-        <span id="logo-left">app</span><span id="logo-right">contraption</span>
+        <span id="logo-left">menu</span><span id="logo-right">machine</span>
       <% end %>
       <nav>
         <ul class="nav pull-right">
@@ -13,16 +13,16 @@
               <li><%= link_to "Users", root_path %></li>
             <% else %>
               <li id="fat-menu" class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Apps <b class="caret"></b>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu Categories <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                  <%= link_to "Add App", new_app_path %>
-                  <% if current_user.apps.any? %>
+                  <%= link_to "Add Menu Category", new_menu_category_path %>
+                  <% if MenuCategory.find_all_by_user_id(current_user.id).any? %>
                     <li class="divider"></li>
                   <% end %>
-                  <% current_user.apps.each do |app| %>
+                  <% MenuCategory.find_all_by_user_id(current_user.id).each do |menu_category| %>
                     <li>
-                      <%= link_to app.name, app %></li>
+                      <%= link_to menu_category.name, menu_category %></li>
                     </li>
                   <% end %>
                 </ul>

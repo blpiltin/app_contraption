@@ -46,6 +46,11 @@ class MenuCategory < ActiveRecord::Base
     @gadgets.first.menu_categories unless @gadgets.first.nil?
   end
 
+  def self.find_all_by_user_id(user_id)
+    app = App.find_by_user_id(user_id)
+    MenuCategory.find_all_by_app_id(app.id)
+  end
+
 	private
     def default_values
       self.position = 

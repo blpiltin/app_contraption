@@ -1,12 +1,1 @@
-<% provide(:title, 'Apps') %>
-
-<h1>Apps</h1>
-
-<%= will_paginate @apps %>
-<ul class="apps">
-  <%= render @apps %>
-</ul>
-<%= will_paginate @apps %>
-<div class="add-link">
-	<%= link_to "Add App", new_app_path %>
-</div>
+<%= render @gadget %>

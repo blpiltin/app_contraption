@@ -8,9 +8,9 @@
       <%= gravatar_for @user %>
       </section>
       <% if !@user.admin? %>
-        <div class="count">
+<!--         <div class="count">
           <%= pluralize(current_user.apps.count, "app") %>
-        </div>
+        </div> -->
         <span><%= link_to "Edit Profile", edit_user_path %></span>
         <span class="back-link"> | <%= link_to "Back", root_path %></span>
       <% end %>
