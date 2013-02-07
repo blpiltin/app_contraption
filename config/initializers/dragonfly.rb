@@ -7,7 +7,7 @@ app.configure_with(:rails)
 if Rails.env.production?
   app.configure do |c|
     c.datastore = Dragonfly::DataStorage::S3DataStore.new(
-      :bucket_name => 'appcontraption',
+      :bucket_name => 'menumachine.appcontraption.com',
       :access_key_id => ENV['S3_KEY'],
       :secret_access_key => ENV['S3_SECRET']
     )
